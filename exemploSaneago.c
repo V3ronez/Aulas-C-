@@ -15,15 +15,24 @@ int main(void){
     if(qtd < 0){
         printf("ERRO! Numero invalido!");
     }
-        else if(stricmp(tipo,"residencial")==0){
+
+        if(stricmp(tipo,"residencial")==0){
         valor=5+(0.05*qtd);
         printf("O valor sera de R$%.2f.", valor);
-    }
-        else if(strcmp(tipo,"comercial")==0){
-        valor = 500+(qtd-80)*0.25;
-        printf("O valor sera de R$%.2f.", valor);
-    }
-        else if(strcmp(tipo,"industrial")==0){
+        }
+        else if(strcmp(tipo,"comercial")==0 && qtd <= 80){
+            valor = 500;
+            printf("O valor sera de R$%.2f.", valor);
+        }
+        else if(strcmp(tipo,"comercial")==0 && qtd > 80){
+            valor = 500+(qtd-80)*0.25;
+            printf("O valor sera de R$%.2f.", valor);
+        }
+        else if(strcmp(tipo,"industrial")==0 && qtd <= 100){
+            valor = 800;
+            printf("O valor sera de R$%.2f.", valor);
+        }
+        else if(strcmp(tipo,"industrial")==0 && qtd > 100){
         valor = 800+(qtd-100)*0.04;
         printf("O valor sera de R$%.2f.", valor);
     }
