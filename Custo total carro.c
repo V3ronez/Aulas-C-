@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main(void){
 
-    float custo_cons, pd, custo_fab, imp;
+    float custo_cons, pd, custo_fab, imp; // custo_consumidor, parte distribuidora, custo_fabrica, imposto.
 
     printf("Digite o custo de fabrica: ");
     scanf("%f", &custo_fab);
